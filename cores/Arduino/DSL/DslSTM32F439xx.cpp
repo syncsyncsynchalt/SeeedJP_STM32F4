@@ -170,8 +170,6 @@ uint32_t DslDacChannel(DAC_TypeDef* reg, int pin)
 
 ////////////////////////////////////////
 // UART
-#ifdef HAL_USART_MODULE_ENABLED
-
 USART_TypeDef* const DslUartRegs[] = {
 	USART1,
 	USART2,
@@ -301,7 +299,6 @@ int DslUartToPort(USART_TypeDef* reg)
 
 	return -1;	// TODO Fail.
 }
-#endif /* HAL_USART_MODULE_ENABLED */
 
 ////////////////////////////////////////
 // I2C

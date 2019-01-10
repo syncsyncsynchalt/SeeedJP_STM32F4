@@ -42,7 +42,7 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN TD */
-
+UART_HandleTypeDef ItUartHandles[8];
 /* USER CODE END TD */
 
 /* Private define ------------------------------------------------------------*/

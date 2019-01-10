@@ -1,4 +1,3 @@
-#ifdef HAL_USART_MODULE_ENABLED
 #include "Arduino.h"
 #include "HardwareSerial.h"
 #include <stm32f4xx_hal.h>
@@ -349,4 +348,3 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef* handle)
 	auto port = DslUartToPort(handle->Instance);
 	((HardwareSerial*)DslUartInstances[port])->RxReadCallback();
 }
-#endif /* HAL_USART_MODULE_ENABLED */

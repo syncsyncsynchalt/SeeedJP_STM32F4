@@ -48,7 +48,7 @@
 
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
-
+extern UART_HandleTypeDef ItUartHandles[];
 /* USER CODE END ET */
 
 /* Exported constants --------------------------------------------------------*/
