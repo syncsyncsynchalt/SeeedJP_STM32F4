@@ -92,10 +92,18 @@ void Error_Handler(void);
 #define DB_TX_GPIO_Port GPIOD
 #define DB_RX_Pin GPIO_PIN_9
 #define DB_RX_GPIO_Port GPIOD
+#define D38_Pin GPIO_PIN_6
+#define D38_GPIO_Port GPIOC
+#define D39_Pin GPIO_PIN_7
+#define D39_GPIO_Port GPIOC
 #define SWDIO_Pin GPIO_PIN_13
 #define SWDIO_GPIO_Port GPIOA
 #define SWCLK_Pin GPIO_PIN_14
 #define SWCLK_GPIO_Port GPIOA
+#define D19_Pin GPIO_PIN_3
+#define D19_GPIO_Port GPIOB
+#define D20_Pin GPIO_PIN_4
+#define D20_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
