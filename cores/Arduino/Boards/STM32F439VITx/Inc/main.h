@@ -78,8 +78,20 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define OSC32_IN_Pin GPIO_PIN_14
+#define OSC32_IN_GPIO_Port GPIOC
+#define OSC32_OUT_Pin GPIO_PIN_15
+#define OSC32_OUT_GPIO_Port GPIOC
+#define OSC_IN_Pin GPIO_PIN_0
+#define OSC_IN_GPIO_Port GPIOH
+#define OSC_OUT_Pin GPIO_PIN_1
+#define OSC_OUT_GPIO_Port GPIOH
 #define DTR_MODULE_Pin GPIO_PIN_5
 #define DTR_MODULE_GPIO_Port GPIOC
+#define DB_TX_Pin GPIO_PIN_8
+#define DB_TX_GPIO_Port GPIOD
+#define DB_RX_Pin GPIO_PIN_9
+#define DB_RX_GPIO_Port GPIOD
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
