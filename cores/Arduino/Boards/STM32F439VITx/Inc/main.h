@@ -88,6 +88,10 @@ void Error_Handler(void);
 #define OSC_OUT_GPIO_Port GPIOH
 #define DTR_MODULE_Pin GPIO_PIN_5
 #define DTR_MODULE_GPIO_Port GPIOC
+#define M_POWER_Pin GPIO_PIN_9
+#define M_POWER_GPIO_Port GPIOE
+#define STATUS_Pin GPIO_PIN_15
+#define STATUS_GPIO_Port GPIOB
 #define DB_TX_Pin GPIO_PIN_8
 #define DB_TX_GPIO_Port GPIOD
 #define DB_RX_Pin GPIO_PIN_9
@@ -100,10 +104,14 @@ void Error_Handler(void);
 #define SWDIO_GPIO_Port GPIOA
 #define SWCLK_Pin GPIO_PIN_14
 #define SWCLK_GPIO_Port GPIOA
+#define RESET_MODULE_Pin GPIO_PIN_5
+#define RESET_MODULE_GPIO_Port GPIOD
 #define D19_Pin GPIO_PIN_3
 #define D19_GPIO_Port GPIOB
 #define D20_Pin GPIO_PIN_4
 #define D20_GPIO_Port GPIOB
+#define PWRKEY_MODULE_Pin GPIO_PIN_5
+#define PWRKEY_MODULE_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
