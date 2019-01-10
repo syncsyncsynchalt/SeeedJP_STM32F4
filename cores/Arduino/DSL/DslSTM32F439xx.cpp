@@ -57,6 +57,7 @@ void DslGpioClockEnable(GPIO_TypeDef* reg)
 
 ////////////////////////////////////////
 // ADC
+#ifdef HAL_ADC_MODULE_ENABLED
 
 ADC_TypeDef* const DslAdcRegs[] = {
 	ADC1,
@@ -132,9 +133,11 @@ uint32_t DslAdcChannel(ADC_TypeDef* reg, int pin)
 
 	return 0;	// TODO Fail.
 }
+#endif /* HAL_ADC_MODULE_ENABLED */
 
 ////////////////////////////////////////
 // DAC
+#ifdef HAL_DAC_MODULE_ENABLED
 
 DAC_TypeDef* const DslDacRegs[] = {
 	DAC1
@@ -163,9 +166,11 @@ uint32_t DslDacChannel(DAC_TypeDef* reg, int pin)
 
 	return 0;	// TODO Fail.
 }
+#endif /* HAL_DAC_MODULE_ENABLED */
 
 ////////////////////////////////////////
 // UART
+#ifdef HAL_USART_MODULE_ENABLED
 
 USART_TypeDef* const DslUartRegs[] = {
 	USART1,
@@ -296,10 +301,11 @@ int DslUartToPort(USART_TypeDef* reg)
 
 	return -1;	// TODO Fail.
 }
+#endif /* HAL_USART_MODULE_ENABLED */
 
 ////////////////////////////////////////
 // I2C
-
+#ifdef HAL_I2C_MODULE_ENABLED
 I2C_TypeDef* const DslI2cRegs[] = {
 	I2C1,
 	I2C2,
@@ -347,6 +353,7 @@ uint32_t DslI2cGpioAlternate(I2C_TypeDef* reg, int pin)
 
 	return 0;	// TODO Fail.
 }
+#endif /* HAL_I2C_MODULE_ENABLED */
 
 ////////////////////////////////////////
 // Interrupt

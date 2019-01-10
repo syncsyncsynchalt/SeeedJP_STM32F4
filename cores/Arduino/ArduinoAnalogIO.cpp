@@ -1,3 +1,4 @@
+#ifdef HAL_ADC_MODULE_ENABLED
 #include "Arduino.h"
 #include <stm32f4xx_hal.h>
 #include <DeviceSupportLibrary.h>
@@ -89,3 +90,4 @@ void analogWrite(int pin, int value)
 	const auto channel = DslDacChannel(DslDacRegs[DAC_CORE], pin); 
 	HAL_DAC_SetValue(&Dac0Handle, channel, DAC_ALIGN_12B_R, value);
 }
+#endif /* HAL_ADC_MODULE_ENABLED */
