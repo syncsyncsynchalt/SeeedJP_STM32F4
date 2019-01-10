@@ -88,6 +88,10 @@ void Error_Handler(void);
 #define OSC_OUT_GPIO_Port GPIOH
 #define DTR_MODULE_Pin GPIO_PIN_5
 #define DTR_MODULE_GPIO_Port GPIOC
+#define LED_RGB_Pin GPIO_PIN_1
+#define LED_RGB_GPIO_Port GPIOB
+#define RGB_POWR_Pin GPIO_PIN_8
+#define RGB_POWR_GPIO_Port GPIOE
 #define M_POWER_Pin GPIO_PIN_9
 #define M_POWER_GPIO_Port GPIOE
 #define GRO_POWR_Pin GPIO_PIN_10

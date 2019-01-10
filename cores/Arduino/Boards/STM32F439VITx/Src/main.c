@@ -308,18 +308,19 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOH_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
-  __HAL_RCC_GPIOE_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
+  __HAL_RCC_GPIOE_CLK_ENABLE();
   __HAL_RCC_GPIOD_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOC, DTR_MODULE_Pin|D38_Pin|D39_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(M_POWER_GPIO_Port, M_POWER_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, LED_RGB_Pin|GRO_POWR_Pin|D19_Pin|D20_Pin 
+                          |PWRKEY_MODULE_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, GRO_POWR_Pin|D19_Pin|D20_Pin|PWRKEY_MODULE_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOE, RGB_POWR_Pin|M_POWER_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(RESET_MODULE_GPIO_Port, RESET_MODULE_Pin, GPIO_PIN_RESET);
@@ -331,19 +332,21 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : M_POWER_Pin */
-  GPIO_InitStruct.Pin = M_POWER_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(M_POWER_GPIO_Port, &GPIO_InitStruct);
-
-  /*Configure GPIO pins : GRO_POWR_Pin D19_Pin D20_Pin PWRKEY_MODULE_Pin */
-  GPIO_InitStruct.Pin = GRO_POWR_Pin|D19_Pin|D20_Pin|PWRKEY_MODULE_Pin;
+  /*Configure GPIO pins : LED_RGB_Pin GRO_POWR_Pin D19_Pin D20_Pin 
+                           PWRKEY_MODULE_Pin */
+  GPIO_InitStruct.Pin = LED_RGB_Pin|GRO_POWR_Pin|D19_Pin|D20_Pin 
+                          |PWRKEY_MODULE_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : RGB_POWR_Pin M_POWER_Pin */
+  GPIO_InitStruct.Pin = RGB_POWR_Pin|M_POWER_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
 
   /*Configure GPIO pin : STATUS_Pin */
   GPIO_InitStruct.Pin = STATUS_Pin;
