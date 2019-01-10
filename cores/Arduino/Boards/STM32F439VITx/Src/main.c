@@ -89,10 +89,10 @@ int main(void)
 {
   HAL_Init();
   SystemClock_Config();
-  // setup();
+  setup();
   while (1)
   {
-    // loop();
+    loop();
   }
 }
 /* USER CODE END 0 */
