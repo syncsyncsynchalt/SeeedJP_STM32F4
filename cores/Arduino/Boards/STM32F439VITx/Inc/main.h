@@ -90,6 +90,8 @@ void Error_Handler(void);
 #define DTR_MODULE_GPIO_Port GPIOC
 #define M_POWER_Pin GPIO_PIN_9
 #define M_POWER_GPIO_Port GPIOE
+#define GRO_POWR_Pin GPIO_PIN_10
+#define GRO_POWR_GPIO_Port GPIOB
 #define STATUS_Pin GPIO_PIN_15
 #define STATUS_GPIO_Port GPIOB
 #define DB_TX_Pin GPIO_PIN_8
