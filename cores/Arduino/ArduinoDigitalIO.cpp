@@ -40,11 +40,12 @@ void pinMode(int pin, int mode)
 		gpioInit.Mode = GPIO_MODE_ANALOG;
 		gpioInit.Pull = GPIO_NOPULL;
 		break;
-
+#ifdef HAL_DAC_MODULE_ENABLED
 	case OUTPUT_ANALOG:
 		// Initialize DAC with related ports.
 		internalInitializeDacPorts(pin);
 		return;
+#endif /* HAL_DAC_MODULE_ENABLED */
 	}
 
 	HAL_GPIO_Init(DslGpioRegs[pin / 16], &gpioInit);
