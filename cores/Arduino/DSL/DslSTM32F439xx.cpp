@@ -302,7 +302,7 @@ int DslUartToPort(USART_TypeDef* reg)
 
 ////////////////////////////////////////
 // I2C
-#ifdef HAL_I2C_MODULE_ENABLED
+
 I2C_TypeDef* const DslI2cRegs[] = {
 	I2C1,
 	I2C2,
@@ -350,7 +350,6 @@ uint32_t DslI2cGpioAlternate(I2C_TypeDef* reg, int pin)
 
 	return 0;	// TODO Fail.
 }
-#endif /* HAL_I2C_MODULE_ENABLED */
 
 ////////////////////////////////////////
 // Interrupt
