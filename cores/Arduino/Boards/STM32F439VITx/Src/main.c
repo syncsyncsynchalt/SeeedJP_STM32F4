@@ -88,6 +88,10 @@ static void MX_I2C1_Init(void);
 int main(void)
 {
   HAL_Init();
+
+  __HAL_RCC_SYSCFG_CLK_ENABLE();
+  __HAL_RCC_PWR_CLK_ENABLE();
+
   SystemClock_Config();
   setup();
   while (1)
