@@ -132,6 +132,8 @@ void Error_Handler(void);
 #define D20_GPIO_Port GPIOB
 #define PWRKEY_MODULE_Pin GPIO_PIN_5
 #define PWRKEY_MODULE_GPIO_Port GPIOB
+#define ANT_POWR_Pin GPIO_PIN_0
+#define ANT_POWR_GPIO_Port GPIOE
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
