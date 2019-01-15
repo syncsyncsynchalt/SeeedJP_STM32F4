@@ -86,6 +86,14 @@ void Error_Handler(void);
 #define OSC_IN_GPIO_Port GPIOH
 #define OSC_OUT_Pin GPIO_PIN_1
 #define OSC_OUT_GPIO_Port GPIOH
+#define A4_Pin GPIO_PIN_4
+#define A4_GPIO_Port GPIOA
+#define A5_Pin GPIO_PIN_5
+#define A5_GPIO_Port GPIOA
+#define A6_Pin GPIO_PIN_6
+#define A6_GPIO_Port GPIOA
+#define A7_Pin GPIO_PIN_7
+#define A7_GPIO_Port GPIOA
 #define DTR_MODULE_Pin GPIO_PIN_5
 #define DTR_MODULE_GPIO_Port GPIOC
 #define LED_RGB_Pin GPIO_PIN_1
@@ -118,8 +126,6 @@ void Error_Handler(void);
 #define SD_MOSI_GPIO_Port GPIOC
 #define SD_CS_Pin GPIO_PIN_0
 #define SD_CS_GPIO_Port GPIOD
-#define RESET_MODULE_Pin GPIO_PIN_5
-#define RESET_MODULE_GPIO_Port GPIOD
 #define D19_Pin GPIO_PIN_3
 #define D19_GPIO_Port GPIOB
 #define D20_Pin GPIO_PIN_4

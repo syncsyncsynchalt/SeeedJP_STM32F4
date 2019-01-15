@@ -328,7 +328,13 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(GPIOE, RGB_POWR_Pin|M_POWER_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOD, SD_CS_Pin|RESET_MODULE_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOD, SD_CS_Pin|GPIO_PIN_5, GPIO_PIN_RESET);
+
+  /*Configure GPIO pins : A4_Pin A5_Pin A6_Pin A7_Pin */
+  GPIO_InitStruct.Pin = A4_Pin|A5_Pin|A6_Pin|A7_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /*Configure GPIO pins : DTR_MODULE_Pin D38_Pin D39_Pin SD_SCK_Pin 
                            SD_MISO_Pin SD_MOSI_Pin */
@@ -361,8 +367,8 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(STATUS_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : SD_CS_Pin RESET_MODULE_Pin */
-  GPIO_InitStruct.Pin = SD_CS_Pin|RESET_MODULE_Pin;
+  /*Configure GPIO pins : SD_CS_Pin PD5 */
+  GPIO_InitStruct.Pin = SD_CS_Pin|GPIO_PIN_5;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
