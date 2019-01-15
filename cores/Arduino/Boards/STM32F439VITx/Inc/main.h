@@ -96,8 +96,12 @@ void Error_Handler(void);
 #define A7_GPIO_Port GPIOA
 #define DTR_MODULE_Pin GPIO_PIN_5
 #define DTR_MODULE_GPIO_Port GPIOC
+#define BAT_C_Pin GPIO_PIN_0
+#define BAT_C_GPIO_Port GPIOB
 #define LED_RGB_Pin GPIO_PIN_1
 #define LED_RGB_GPIO_Port GPIOB
+#define BOOT1_Pin GPIO_PIN_2
+#define BOOT1_GPIO_Port GPIOB
 #define RGB_POWR_Pin GPIO_PIN_8
 #define RGB_POWR_GPIO_Port GPIOE
 #define M_POWER_Pin GPIO_PIN_9
@@ -118,6 +122,8 @@ void Error_Handler(void);
 #define SWDIO_GPIO_Port GPIOA
 #define SWCLK_Pin GPIO_PIN_14
 #define SWCLK_GPIO_Port GPIOA
+#define SD_POWR_Pin GPIO_PIN_15
+#define SD_POWR_GPIO_Port GPIOA
 #define SD_SCK_Pin GPIO_PIN_10
 #define SD_SCK_GPIO_Port GPIOC
 #define SD_MISO_Pin GPIO_PIN_11

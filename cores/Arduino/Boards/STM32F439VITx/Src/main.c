@@ -321,11 +321,14 @@ static void MX_GPIO_Init(void)
                           |SD_MISO_Pin|SD_MOSI_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, LED_RGB_Pin|GRO_POWR_Pin|D19_Pin|D20_Pin 
-                          |PWRKEY_MODULE_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, BAT_C_Pin|LED_RGB_Pin|BOOT1_Pin|GRO_POWR_Pin 
+                          |D19_Pin|D20_Pin|PWRKEY_MODULE_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOE, RGB_POWR_Pin|M_POWER_Pin|ANT_POWR_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(SD_POWR_GPIO_Port, SD_POWR_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOD, SD_CS_Pin|GPIO_PIN_5, GPIO_PIN_RESET);
@@ -345,10 +348,10 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : LED_RGB_Pin GRO_POWR_Pin D19_Pin D20_Pin 
-                           PWRKEY_MODULE_Pin */
-  GPIO_InitStruct.Pin = LED_RGB_Pin|GRO_POWR_Pin|D19_Pin|D20_Pin 
-                          |PWRKEY_MODULE_Pin;
+  /*Configure GPIO pins : BAT_C_Pin LED_RGB_Pin BOOT1_Pin GRO_POWR_Pin 
+                           D19_Pin D20_Pin PWRKEY_MODULE_Pin */
+  GPIO_InitStruct.Pin = BAT_C_Pin|LED_RGB_Pin|BOOT1_Pin|GRO_POWR_Pin 
+                          |D19_Pin|D20_Pin|PWRKEY_MODULE_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -366,6 +369,13 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(STATUS_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : SD_POWR_Pin */
+  GPIO_InitStruct.Pin = SD_POWR_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(SD_POWR_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pins : SD_CS_Pin PD5 */
   GPIO_InitStruct.Pin = SD_CS_Pin|GPIO_PIN_5;
