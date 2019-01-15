@@ -110,6 +110,14 @@ void Error_Handler(void);
 #define SWDIO_GPIO_Port GPIOA
 #define SWCLK_Pin GPIO_PIN_14
 #define SWCLK_GPIO_Port GPIOA
+#define SD_SCK_Pin GPIO_PIN_10
+#define SD_SCK_GPIO_Port GPIOC
+#define SD_MISO_Pin GPIO_PIN_11
+#define SD_MISO_GPIO_Port GPIOC
+#define SD_MOSI_Pin GPIO_PIN_12
+#define SD_MOSI_GPIO_Port GPIOC
+#define SD_CS_Pin GPIO_PIN_0
+#define SD_CS_GPIO_Port GPIOD
 #define RESET_MODULE_Pin GPIO_PIN_5
 #define RESET_MODULE_GPIO_Port GPIOD
 #define D19_Pin GPIO_PIN_3

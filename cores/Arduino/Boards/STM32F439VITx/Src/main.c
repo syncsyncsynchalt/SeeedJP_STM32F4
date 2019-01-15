@@ -317,7 +317,8 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOD_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOC, DTR_MODULE_Pin|D38_Pin|D39_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOC, DTR_MODULE_Pin|D38_Pin|D39_Pin|SD_SCK_Pin 
+                          |SD_MISO_Pin|SD_MOSI_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, LED_RGB_Pin|GRO_POWR_Pin|D19_Pin|D20_Pin 
@@ -327,10 +328,12 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(GPIOE, RGB_POWR_Pin|M_POWER_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(RESET_MODULE_GPIO_Port, RESET_MODULE_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOD, SD_CS_Pin|RESET_MODULE_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : DTR_MODULE_Pin D38_Pin D39_Pin */
-  GPIO_InitStruct.Pin = DTR_MODULE_Pin|D38_Pin|D39_Pin;
+  /*Configure GPIO pins : DTR_MODULE_Pin D38_Pin D39_Pin SD_SCK_Pin 
+                           SD_MISO_Pin SD_MOSI_Pin */
+  GPIO_InitStruct.Pin = DTR_MODULE_Pin|D38_Pin|D39_Pin|SD_SCK_Pin 
+                          |SD_MISO_Pin|SD_MOSI_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -358,12 +361,12 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(STATUS_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : RESET_MODULE_Pin */
-  GPIO_InitStruct.Pin = RESET_MODULE_Pin;
+  /*Configure GPIO pins : SD_CS_Pin RESET_MODULE_Pin */
+  GPIO_InitStruct.Pin = SD_CS_Pin|RESET_MODULE_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(RESET_MODULE_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
 
 }
 
