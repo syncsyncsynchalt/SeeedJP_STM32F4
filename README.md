@@ -29,6 +29,18 @@ ADC, DACは入れてないのでArduinoライブラリからもマクロで切�
 
 ----
 
+回路について。
+
+ANT_POWR(PE0, 97) これ何処にも繋がってない気がする。別製品でのアクティブアンテナか否かの識別用…？
+
+UARTなりADCはどれも標準のPinoutに沿ってるがTFカード端子だけはSDでもSPIでもない独自の定義になってる。不思議。
+
+BAT_C(PB0, 35)でバッテリの接続状態が取れるかもしれない。
+
+HSEは8MHz。標準では特に使ってないように思えるがLSEにも32.768KHzのクリスタル乗ってる、やったね、RTCで遊べるね。
+
+----
+
 ![](do_not_gen_the_main_func.png)
 
 main関数が毎回再生成されるとArduinoとして辻褄が合わなくなるので、[Do not generate the main] にチェックを入れて [GENERATE CODE] しないと爆発する。
@@ -90,7 +102,7 @@ STM32CubeMXからRTCを追加して [GENERATE CODE] する。
 
 ![](init_function_visibillity.png)
 
-ハンドラはヘッダファイルのユーザーコードでexternしてする。
+ハンドラはヘッダファイルのユーザーコードでexternして引き摺り出せるようにする。
 
 動いた。激アツ。
 
