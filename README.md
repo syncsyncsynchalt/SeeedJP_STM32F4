@@ -123,3 +123,13 @@ void loop() {
   HAL_RTC_GetDate(&hrtc, &sdatestructureget, RTC_FORMAT_BIN);
 }
 ```
+
+----
+
+なにもしてないのにGPIO動かないのは何故か。答え。何もしてないから。Arduinoの世界なら `Wio.PowerSupplyGrove(true);` する。
+
+なにもしてないのにGPIOが動かないのは何故か。答え。何もしてないから。ポートにclockを流す。 `__HAL_RCC_GPIOB_CLK_ENABLE();` など。
+
+
+
+
