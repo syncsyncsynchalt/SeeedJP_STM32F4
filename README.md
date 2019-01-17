@@ -131,5 +131,9 @@ void loop() {
 なにもしてないのにGPIOが動かないのは何故か。答え。何もしてないから。ポートにclockを流す。 `__HAL_RCC_GPIOB_CLK_ENABLE();` など。
 
 
+----
 
+考えなしにArduino_Core_STM32からRTC周りのコード持ってきた。LLも一緒に持ってきてるし、もっとまじめに考えた方がいい気がする。
+
+https://github.com/stm32duino/Arduino_Core_STM32/tree/86f4f82231cee0f5bacdd9dfd7f58704b36a8d15
 
