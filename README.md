@@ -133,7 +133,17 @@ void loop() {
 
 ----
 
-考えなしにArduino_Core_STM32からRTC周りのコード持ってきた。LLも一緒に持ってきてるし、もっとまじめに考えた方がいい気がする。
+STM32RTCを持ってきた。
+
+考えなしにArduino_Core_STM32からRTC周りのコード持ってきた。LLも一緒に持ってきてるし、もっとまじめに考えた方がいい気がする。 => やはり恰好悪いのでLL捨てた。
 
 https://github.com/stm32duino/Arduino_Core_STM32/tree/86f4f82231cee0f5bacdd9dfd7f58704b36a8d15
+
+Arduino_Core_STM32便利だけどこれに移行するの全部入りになるしSTM32CubeMXとの辻褄合わせ考えないといけないから必要なものだけもってくる。
+
+----
+
+STM32LowPowerを持ってきた。
+
+簡単な仕組みだけどお便利。今はRTCによるwakeupのみもってきた。UART割り込みのも必要になりそうなので追々考える。
 
