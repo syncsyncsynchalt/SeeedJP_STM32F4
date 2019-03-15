@@ -102,6 +102,12 @@ void HardwareSerial::end()
 	while (!_RxBuffer.empty()) _RxBuffer.pop();
 }
 
+void HardwareSerial::clear()
+{
+	std::queue<uint8_t>().swap(_RxBuffer);
+	return;
+}
+
 int HardwareSerial::available() const
 {
 	return RxReadedSize();

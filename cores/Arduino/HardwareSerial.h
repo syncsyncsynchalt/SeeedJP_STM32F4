@@ -29,6 +29,8 @@ public:
 	unsigned long getWriteTimeout() const;
 	void setWriteTimeout(unsigned long timeout);
 
+	void clear();
+
 public:
 	virtual size_t write(uint8_t val);
 	void flush();
