@@ -1,9 +1,26 @@
 #include "Arduino.h"
 #include <stm32f4xx_hal.h>
 
+void HAL_Delay2(uint32_t Delay)
+{
+  uint32_t tickstart = HAL_GetTick();
+  uint32_t wait = Delay;
+
+  /* Add a freq to guarantee minimum wait */
+  if (wait < HAL_MAX_DELAY)
+  {
+    wait += (uint32_t)(HAL_TICK_FREQ_DEFAULT);
+  }
+
+  while((HAL_GetTick() - tickstart) < wait)
+  {
+  	__WFI();
+  }
+}
+
 void delay(unsigned long ms)
 {
-	HAL_Delay(ms);
+	HAL_Delay2(ms);
 }
 
 void delayMicroseconds(int us)

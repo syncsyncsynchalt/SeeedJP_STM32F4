@@ -75,6 +75,8 @@ void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
 void MX_RTC_Init(void);
+void SystemClock_Config(void);
+
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
